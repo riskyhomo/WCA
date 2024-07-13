@@ -1,0 +1,43 @@
+# in.water_droplet_contact_angle
+
+units real
+atom_style full
+boundary p p p
+
+# Read the combined rough surface and water droplet data
+read_data combined_surface_water.data
+
+#debugging 
+info all
+
+# Define potential for interactions
+pair_style lj/cut 10.0
+pair_coeff 1 1 1.0 1.0
+pair_coeff 2 2 0.5 1.0
+pair_coeff 1 2 0.8 1.0
+
+# Grouping atoms: group 1 is the surface, group 2 is the water
+group surface type 1
+group water type 2
+
+# Define settings for the simulation
+neighbor 2.0 bin
+neigh_modify delay 5
+
+# Fix the surface atoms in place
+fix 1 surface setforce 0.0 0.0 0.0
+
+# Allow the water droplet to equilibrate and interact with the surface
+fix 2 water nvt temp 300.0 300.0 100.0
+
+# Adding gravity to water molecules to help droplet settle on the surface
+fix 3 water gravity 9.8 vector 0.0 0.0 -1.0
+
+# Define simulation parameters
+timestep 1.0
+thermo 100
+run 10000  # Adjust run time as needed for equilibrium
+
+# Dump trajectory for visualization
+dump 1 all atom 100 dump.water_droplet_contact_angle
+

@@ -1,0 +1,44 @@
+>Main< () 13 % set num_atoms [molinfo top "type 2"]
+expected integer but got "type 2"
+>Main< () 14 % set num_atoms [molinfo top get numatoms]
+42472
+>Main< () 15 % set num_atoms_1 [atomselect top "type 2"]
+atomselect1
+>Main< () 16 % $num_atoms_1
+usage: <atomselection> <command> [args...]
+
+Commands for manipulating atomselection metadata:
+  frame [new frame value]      -- get/set frame
+  molid|molindex               -- get selection's molecule id
+  text                         -- get selection's text
+  delete                       -- delete atomselection (to free memory)
+  global                       -- move atomselection to global scope
+  update                       -- recalculate selection
+
+Commands for getting/setting attributes:
+  num                          -- number of atoms
+  list                         -- get atom indices
+  get <list of attributes>     -- for attributes use 'atomselect keywords'
+  set <list of attributes> <nested list of values>
+  getbonds                     -- get list of bonded atoms
+  setbonds <bondlists>
+  getbondorders                -- get list of bond orders
+  setbondorders <bondlists>
+  getbondtypes                 -- get list of bond types
+  setbondtypes  <bondlists>
+  moveto|moveby <3 vector>     -- change atomic coordinates
+  lmoveto|lmoveby <x> <y> <z>
+  move <4x4 transforamtion matrix>
+
+Commands for writing to a file:
+  writepdb <filename>          -- write sel to PDB file
+  writeXXX <filename>          -- write sel to XXX file (if XXX is a known format)
+
+num_atoms num_atoms_1
+>Main< () 17 % num $num_atoms_1
+invalid command name "num"
+>Main< () 18 % 
+num_atoms num_atoms_1
+>Main< () 18 % $num_atoms_1 num
+4424
+>Main< () 19 % 

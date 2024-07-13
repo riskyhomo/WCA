@@ -1,0 +1,41 @@
+# A mixture of drug, water and C60 
+# 
+# Specify the file extension and output filename 
+# tolerance specifies the minimum distance between two atoms 
+# filetype pdb 
+output final.pdb 
+tolerance 2.0 
+# 
+# next we specify the pdb file of the drug 
+# seed is just a random number, can be anything 
+# number is the total number of molecules of the drug 
+# inside box specifies that the drug has to be 
+# inserted inside the box of dimensions 0 0 0 50 50 50 
+# first three are x,y,z coordinate of origin of box 
+# next three are the end coordinates 
+# 
+structure drug.pdb
+ seed 1232131
+ number 10
+ inside box 0 0 0 50 50 50
+end structure 
+# 
+# perform the same for all other molecules you want 
+# to place randomly 
+# 
+structure water.pdb
+ seed 1982453
+ number 4500
+ inside box 0 0 0 50 50 50
+end structure 
+# 
+# In case you want to fix an atom or molecule 
+# use fixed command and specify the x,y,z coordinates 
+# first three are the xyz coordinates
+# next three are the rotation you want to add
+#
+structure C60.pdb
+ number 0 
+ center 
+ fixed 50 50 50 0 0 0 
+end structure

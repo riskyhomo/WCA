@@ -1,0 +1,31 @@
+  New positions will be based on good molecules (movebadrandom is not set)
+   Moving:|0                                                             100%|
+          |******************************************************************|
+  Function value after moving molecules:   2983807658040622.5
+  Packing:|0                                                             100%|
+          |******************************************************************|
+          |******************************************************************|
+  Fixing bad orientations ...     20 of     20
+  Moving worst molecules ...
+  Function value before moving molecules:   2983774826957209.5
+  Type         1 molecules with non-zero contributions:  100.00%
+  Moving         2 molecules of type         1
+  New positions will be based on good molecules (movebadrandom is not set)
+   Moving:|0                                                             100%|
+          |******************************************************************|
+  Function value after moving molecules:   2983857327655290.5
+
+  Restraint-only function value:    2983857327655290.5
+  Maximum violation of the restraints:    2121516759.3864043
+  ERROR: Packmol was unable to put the molecules
+         in the desired regions even without
+         considering distance tolerances.
+         Probably there is something wrong with
+         the constraints, since it seems that
+         the molecules cannot satisfy them at
+         at all.
+         Please check the spatial constraints and
+         try again.
+  >The maximum number of cycles (          20 ) was achieved.
+   You may try increasing it with the nloop0 keyword, as in: nloop0 1000
+STOP 173 

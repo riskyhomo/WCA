@@ -1,0 +1,10 @@
+tolerance 2.0 
+
+output test.pdb 
+
+filetype pbd
+
+structure C:/Users/Smart_Coatings/Desktop/Internship/Modeling/packmol-20.14.4-docs1/packmol-20.14.4-docs1/corrected_water_1.pdb 
+  number 40
+  inside cube 0. 0. 0. 40.
+end structure 
